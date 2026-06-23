@@ -58,4 +58,7 @@ async def name_input(message: types.Message):
         del user_requests[message.from_user.id]
 
 if __name__ == "__main__":
-    executor.start_polling(dp, skip_updates=True)
+    try:
+        executor.start_polling(dp, skip_updates=True)
+    except Exception as e:
+        print("FEHLER:", e)
